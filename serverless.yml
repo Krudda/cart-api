@@ -15,5 +15,9 @@ provider:
         PG_PASSWORD: ${env:PG_PASSWORD}
 
 functions:
-    rdsIntegration:
-        handler: src/handlers/rdsIntegration.handler
+      main:
+        handler: dist/main.handler
+        events:
+        - http:
+            method: ANY
+            path: /
